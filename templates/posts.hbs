@@ -2,7 +2,10 @@
 
 <h1>Dracula's Blog</h1>
 <ul>
-  <li><a href="#">I love Blood!</a></li>
-  <li><a href="#">I love Sun Block!</a></li>
-  <li><a href="#">I love Holy Water!</a></li>
+  {{#each}}
+    <li>{{#link-to 'post' this.id}}{{title}} Importance: {{importance}}{{/link-to}}</li>
+  {{/each}}
 </ul>
+
+<p><a href="#" {{action 'sortByTitle'}}>Sort by title</a></p>
+<p><a href="#" {{action 'sortByImportance'}}>Sort by importance</a></p>
